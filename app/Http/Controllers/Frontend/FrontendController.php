@@ -11,6 +11,7 @@ use App\Models\Cart;
 
 
 
+
 class FrontendController extends Controller
 {
     public function index()

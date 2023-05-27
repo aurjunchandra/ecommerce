@@ -1,6 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
+
 <main class="main">
             <div class="intro-slider-container">
                 <div class="owl-carousel owl-simple owl-light owl-nav-inside" data-toggle="owl" data-owl-options='{"nav": false}'>
@@ -443,15 +444,12 @@
                         <li class="nav-item">
                             <a class="nav-link active" id="top-all-link" data-toggle="tab" href="#top-all-tab" role="tab" aria-controls="top-all-tab" aria-selected="true">All</a>
                         </li>
+                        @foreach($categories as $category)
                         <li class="nav-item">
-                            <a class="nav-link" id="top-fur-link" data-toggle="tab" href="#top-fur-tab" role="tab" aria-controls="top-fur-tab" aria-selected="false">Furniture</a>
+                            <a class="nav-link" id="top-fur-link" data-toggle="tab" href="#top-fur-tab" role="tab" aria-controls="top-fur-tab" aria-selected="false">{{Str::ucfirst($category->name)}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="top-decor-link" data-toggle="tab" href="#top-decor-tab" role="tab" aria-controls="top-decor-tab" aria-selected="false">Decoration</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="top-light-link" data-toggle="tab" href="#top-light-tab" role="tab" aria-controls="top-light-tab" aria-selected="false">Lighting</a>
-                        </li>
+                        @endforeach
+                        
                     </ul>
                 </div><!-- End .heading -->
 

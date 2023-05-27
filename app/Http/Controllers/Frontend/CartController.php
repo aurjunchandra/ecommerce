@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
 
+
 class CartController extends Controller
 {
     public function addToCart(Request $request, $id)
