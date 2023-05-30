@@ -36,4 +36,21 @@ class CartController extends Controller
         session()->flash('success', 'Product Removed from cart');
         return redirect()->back();
     }
+
+    public function cartProducts()
+    {
+        return view('frontend.home.carts');
+    }
+
+    public function cartProductUpdate(Request $request, $id)
+    {
+        $cart = Cart::find($id);
+        $cart->qty = $request->qty;
+        $cart->save();
+        session()->flash('success', 'Cart Product has been updated' );
+        return redirect()->back();
+    }
+    public function checkout(){
+       
+    }
 }
